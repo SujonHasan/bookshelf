@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "JavaScript and Jquery",
+    "author": "Jon Duckett",
+    "publication": 2013,
+    "price": 68,
+    "thumbnail": "https://i.ibb.co/w4tMjQ9/Javascriptand-Jquery.jpg",
+    "isFavourite": false
+  },
+  {
+    "id": 2,
+    "title": "Dopamine Detox",
+    "author": "Thibaut Meurisse",
+    "publication": 2021,
+    "price": 50,
+    "thumbnail": "https://i.ibb.co/Q99KYtQ/Dopamine-Detox.jpg",
+    "isFavourite": true
+  },
+  {
+    "id": 3,
+    "title": "Time Management",
+    "author": "Jerry Kershen",
+    "publication": 2014,
+    "price": 45,
+    "thumbnail": "https://i.ibb.co/ygJG7zv/Time-Management.jpg",
+    "isFavourite": false
+  },
+  {
+    "id": 4,
+    "title": "The Art Of Creative Thinking",
+    "author": "Rod Judkins",
+    "publication": 2015,
+    "price": 70,
+    "thumbnail": "https://i.ibb.co/gFFDdGV/The-Art-Of-Creative-Thinking.jpg",
+    "isFavourite": true
+  },
+  {
+    "id": 5,
+    "title": "Eat That Frog!",
+    "author": "Tracy Brian",
+    "publication": 2001,
+    "price": 55,
+    "thumbnail": "https://i.ibb.co/n8rN5jX/Eat-That-Frog.jpg",
+    "isFavourite": false
+  },
+  {
+    "id": 6,
+    "title": "Rich Dad Poor Dad",
+    "author": "Robert T.Kiyosaki",
+    "publication": 1997,
+    "price": 30,
+    "thumbnail": "https://i.ibb.co/Wy9sQ5G/Rich-Dad-Poor-Dad.jpg",
+    "isFavourite": true
+  },
+  {
+    "id": 7,
+    "title": "The Secret",
+    "author": "Rhonda Byrne",
+    "publication": 2006,
+    "price": 28,
+    "thumbnail": "https://i.ibb.co/1LSwd8h/The-Secret.jpg",
+    "isFavourite": false
+  },
+  {
+    "id": 8,
+    "title": "Think And Grow Rich",
+    "author": "Napoleon Hill",
+    "publication": 1937,
+    "price": 18,
+    "thumbnail": "https://i.ibb.co/SVwfBGK/Think-And-Grow-Rich.jpg",
+    "isFavourite": true
+  }
+]
