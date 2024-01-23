@@ -11,7 +11,7 @@ require("dotenv").config();
 const app = express();
 app.use(core());
 app.use(bodyParser.json());
-app.use(cookieParser());
+app.use(cookieParser()); 
 
 const port = process.env.PORT || 5000;
 const url = process.env.DATABASEURL;
