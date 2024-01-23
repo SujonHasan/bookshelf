@@ -1,7 +1,11 @@
 const express = require("express");
 const core = require("cors");
-const bodyParser = require('body-parser')
-const Books = require("./models/bookSchema");
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+const Books = require("./src/models/bookSchema");
+const jwt = require("jsonwebtoken");
+const cookieParser = require('cookie-parser')
+const authenticate = require("./src/middlewares/authenticate");
 
 require("dotenv").config();
 
@@ -9,13 +13,13 @@ require("dotenv").config();
 const app = express();
 app.use(core());
 app.use(bodyParser.json());
+app.use(cookieParser());
 
 const port = process.env.PORT || 5000;
 const url = process.env.DATABASEURL;
 
 //mongoose
-const mongoose = require("mongoose");
-mongoose.set("strictQuery", false);
+mongoose.set("strictQuery",true);
 
 //create object
 const book = new Books({
@@ -29,7 +33,7 @@ const book = new Books({
 
 // book.save();
 
-app.get("/", (req, res) => {
+app.get("/", authenticate, (req, res) => {
   res.send(`Server is Running port ${port}`);
 });
 
@@ -44,12 +48,31 @@ app.get("/books", async (req, res) => {
 
 app.post("/books", async (req, res) => {
 
-  console.log(req.body);
+  // console.log(req.body);
   const book = new Books(req.body);
 
+  const token = jwt.sign(
+    {
+      title: req.body.title,
+      author: req.body.author,
+      publication: req.body.publication,
+    },
+    process.env.JWT_SECRET,
+    { expiresIn: '10m', issuer: req.body.author }
+  );
+
+  // console.log("token create = ", token);
+
   try {
+
+    book.token = token;
     await book.save();
-    res.status(201).json({book})
+
+    res.cookie("access_token", token, {
+      httpOnly: true,
+    });
+
+    res.status(201).json({ book });
   } catch (error) {
     res.status(400).json({ srror: error.message });
   }

@@ -27,7 +27,7 @@ function Books() {
       {!data.isLoading && data.books.length ? (
         <div className="row p-2 mx-auto gap-2 mx-auto justify-content-center">
           {data.books &&
-            data.books.map((book) => <Book key={book.id} book={book}></Book>)}
+            data.books.map((book) => <Book key={book._id} book={book}></Book>)}
         </div>
       ) : null}
     </>

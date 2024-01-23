@@ -24,6 +24,9 @@ const bookSchema = new mongoose.Schema({
     },
     isFavourite: {
         type: Boolean,
+    },
+    token: {
+        type: String
     }
 
 })
