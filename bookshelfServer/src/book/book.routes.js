@@ -8,8 +8,8 @@ function BookRoutes(app) {
   });
 
   app.route("/books")
-        // .get(getBooks)
-        .get(authenticate, getBooks) // authenticate use postman
+        .get(getBooks)
+        // .get(authenticate, getBooks) // authenticate use postman
         .post(createBook);
 }
 

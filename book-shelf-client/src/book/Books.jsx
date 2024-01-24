@@ -16,7 +16,6 @@ function Books() {
   return (
     <>
       <div className="text-center">
-        <h1>Books Self</h1>
         {data.isLoading && <h1>Lodding.............</h1>}
 
         {!data.isLoading && data.error ? (
