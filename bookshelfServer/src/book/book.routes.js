@@ -1,5 +1,4 @@
 const authenticate = require("../middlewares/authenticate");
-const mongoose = require("mongoose");
 const { createBook, getBooks } = require("./book.controller");
 
 function BookRoutes(app) {
@@ -9,8 +8,8 @@ function BookRoutes(app) {
   });
 
   app.route("/books")
-        .get(getBooks)
-        // .get(authenticate, getBooks) // authenticate use postman
+        // .get(getBooks)
+        .get(authenticate, getBooks) // authenticate use postman
         .post(createBook);
 }
 
